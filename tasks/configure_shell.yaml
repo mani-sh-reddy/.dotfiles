@@ -1,0 +1,39 @@
+---
+- name: Install Oh My ZSH
+  shell: sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+  args:
+    creates: "/Users/{{ lookup('env', 'USER') }}/.oh-my-zsh"
+
+- name: Copy Antidote Plugins
+  ansible.builtin.copy:
+    src: templates/zsh_plugins.txt
+    dest: $HOME/.zsh_plugins.txt
+
+- name: Template zshrc
+  ansible.builtin.template:
+    src: templates/zshrc.j2
+    dest: $HOME/.zshrc
+    backup: true
+
+- name: Copy p10k config
+  ansible.builtin.copy:
+    src: templates/p10k.zsh
+    dest: $HOME/.p10k.zsh
+    backup: true
+  ignore_errors: true
+    
+- name: Ensure scripts directory exists
+  ansible.builtin.file:
+    path: "$HOME/Documents/scripts"
+    state: directory
+    mode: '0755'
+
+- name: Copy all scripts to the scripts directory
+  ansible.builtin.copy:
+    src: scripts/
+    dest: "$HOME/Documents/scripts/"
+    owner: "{{ lookup('env', 'USER') }}"
+    mode: '0755'
+    remote_src: no
+    force: yes
+    backup: yes

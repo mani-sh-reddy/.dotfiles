@@ -1,0 +1,20 @@
+---
+- name: Check dockutil is installed
+  stat:
+    path: "/opt/homebrew/bin/dockutil"
+  register: dockutil_stat
+
+- name: Remove all dock items
+  shell: "dockutil --remove all --no-restart"
+  register: removed_items_task
+
+- name: Check and add apps to dock
+  shell: dockutil --add '{{ item.path }}' --no-restart
+  with_items: "{{ MacOSDockItems.Apps }}"
+
+- name: Restart Dock
+  shell: killall Dock
+
+- name: Add folders to dock
+  shell: dockutil --section others --add '{{ item.path }}' --display stack
+  with_items: "{{ MacOSDockItems.Folders }}"

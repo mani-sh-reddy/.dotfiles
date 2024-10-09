@@ -1,0 +1,143 @@
+---
+- name: Create Common Object.
+  community.general.osx_defaults: &common
+    key: "{{ item.key }}"
+    type: >-
+      {{ 'float' if item.value is float 
+      else 'integer' if item.value is integer 
+      else 'string' if item.value is string 
+      else 'bool' if item.value is boolean 
+      else 'int' }}
+    value: "{{ item.value }}"
+    state: present
+  with_dict: "{{ Settings.macOS.SetupVar }}"
+
+- name: Global Domain Settings
+  community.general.osx_defaults:
+    <<: *common
+    domain: "NSGlobalDomain"
+  with_dict: "{{ Settings.macOS.GlobalDomain }}"
+  ignore_errors: true
+
+- name: Apple Global Domain Settings
+  community.general.osx_defaults:
+    <<: *common
+    domain: "Apple Global Domain"
+  with_dict: "{{ Settings.macOS.AppleGlobalDomain }}"
+  ignore_errors: true
+
+- name: Launch Services
+  community.general.osx_defaults:
+    <<: *common
+    domain: com.apple.LaunchServices
+  with_dict: "{{ Settings.macOS.LaunchServices }}"
+  ignore_errors: true
+
+- name: Trackpad
+  community.general.osx_defaults:
+    <<: *common
+    domain: com.apple.AppleMultitouchTrackpad
+  with_dict: "{{ Settings.macOS.AppleMultitouchTrackpad }}"
+  ignore_errors: true
+
+- name: Accessibility
+  community.general.osx_defaults:
+    <<: *common
+    domain: com.apple.Accessibility
+  with_dict: "{{ Settings.macOS.Accessibility }}"
+  ignore_errors: true
+
+- name: FaceTime
+  community.general.osx_defaults:
+    <<: *common
+    domain: com.apple.FaceTime
+  with_dict: "{{ Settings.macOS.FaceTime }}"
+  ignore_errors: true
+
+- name: Safari
+  community.general.osx_defaults:
+    <<: *common
+    domain: com.apple.Safari
+  with_dict: "{{ Settings.macOS.Safari }}"
+  ignore_errors: true
+  become: true
+  become_user: root
+
+- name: TextEdit
+  community.general.osx_defaults:
+    <<: *common
+    domain: com.apple.TextEdit
+  with_dict: "{{ Settings.macOS.TextEdit }}"
+  ignore_errors: true
+
+- name: WindowManager
+  community.general.osx_defaults:
+    <<: *common
+    domain: com.apple.WindowManager
+  with_dict: "{{ Settings.macOS.WindowManager }}"
+  ignore_errors: true
+
+- name: Desktop Services
+  community.general.osx_defaults:
+    <<: *common
+    domain: com.apple.desktopservices
+  with_dict: "{{ Settings.macOS.DesktopServices }}"
+  ignore_errors: true
+
+- name: Dock
+  community.general.osx_defaults:
+    <<: *common
+    domain: com.apple.dock
+  with_dict: "{{ Settings.macOS.Dock }}"
+  ignore_errors: true
+
+- name: Finder
+  community.general.osx_defaults:
+    <<: *common
+    domain: com.apple.finder
+  with_dict: "{{ Settings.macOS.Finder }}"
+  ignore_errors: true
+
+- name: Books
+  community.general.osx_defaults:
+    <<: *common
+    domain: com.apple.iBooksX
+  with_dict: "{{ Settings.macOS.Books }}"
+  ignore_errors: true
+
+- name: Calendar
+  community.general.osx_defaults:
+    <<: *common
+    domain: com.apple.iCal
+  with_dict: "{{ Settings.macOS.Calendar }}"
+  ignore_errors: true
+
+- name: Mail
+  community.general.osx_defaults:
+    <<: *common
+    domain: com.apple.mail
+  with_dict: "{{ Settings.macOS.Mail }}"
+  ignore_errors: true
+  become: true
+  become_user: root
+
+- name: Clock
+  community.general.osx_defaults:
+    <<: *common
+    domain: com.apple.menuextra.clock
+  with_dict: "{{ Settings.macOS.Clock }}"
+  ignore_errors: true
+
+- name: One Time Passcodes
+  community.general.osx_defaults:
+    <<: *common
+    domain: com.apple.onetimepasscodes
+  with_dict: "{{ Settings.macOS.OneTimePasscodes }}"
+  ignore_errors: true
+
+- name: Screen Capture
+  community.general.osx_defaults:
+    <<: *common
+    domain: com.apple.screencapture
+  with_dict: "{{ Settings.macOS.ScreenCapture }}"
+  ignore_errors: true

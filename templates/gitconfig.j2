@@ -1,0 +1,21 @@
+# Generated using Ansible Playbook (mani-sh-reddy/.dotfiles)
+
+[user]
+    name = {{ gitconfig.name }}
+    email = {{ gitconfig.githubNoReplyEmail }}
+    signingKey = {{ gitconfig.signingKey }}
+[commit]
+    gpgSign = true
+[core]
+    excludesfile = {{ homeDir }}/.gitignore_global
+    autocrlf = input
+    pager = less -F -X
+[filter "lfs"]
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+    required = true
+[gpg]
+    program = /opt/homebrew/bin/gpg
+[init]
+    defaultBranch = main

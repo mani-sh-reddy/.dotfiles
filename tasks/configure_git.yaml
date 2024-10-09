@@ -1,0 +1,12 @@
+---
+- name: Template gitconfig
+  ansible.builtin.template:
+    src: templates/gitconfig.j2
+    dest: $HOME/.gitconfig
+    backup: true
+
+- name: Template gitignore_global
+  ansible.builtin.template:
+    src: templates/gitignore_global.j2
+    dest: $HOME/.gitignore_global
+    backup: true

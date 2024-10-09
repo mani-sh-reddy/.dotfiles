@@ -1,0 +1,55 @@
+---
+- name: Create Common Object.
+  community.general.osx_defaults: &common
+    key: "{{ item.key }}"
+    type: >-
+      {{ 'float' if item.value is float 
+      else 'integer' if item.value is integer 
+      else 'string' if item.value is string 
+      else 'bool' if item.value is boolean 
+      else 'int' }}
+    value: "{{ item.value }}"
+    state: present
+  with_dict: "{{ Settings.macOS.SetupVar }}"
+
+- name: Aldente Settings
+  community.general.osx_defaults:
+    <<: *common
+    domain: com.apphousekitchen.aldente-pro
+  with_dict: "{{ Settings.Aldente }}"
+
+- name: IINA Settings
+  community.general.osx_defaults:
+    <<: *common
+    domain: com.colliderli.iina
+  with_dict: "{{ Settings.IINA }}"
+
+- name: Keka Settings
+  community.general.osx_defaults:
+    <<: *common
+    domain: com.aone.keka
+  with_dict: "{{ Settings.Keka }}"
+
+- name: Raycast Settings
+  community.general.osx_defaults:
+    <<: *common
+    domain: com.raycast.macos
+  with_dict: "{{ Settings.Raycast }}"
+
+- name: RemindFaster Settings
+  community.general.osx_defaults:
+    <<: *common
+    domain: chojubo.addReminder
+  with_dict: "{{ Settings.RemindFaster }}"
+
+- name: Transmission Settings
+  community.general.osx_defaults:
+    <<: *common
+    domain: org.m0k.transmission
+  with_dict: "{{ Settings.Transmission }}"
+
+- name: UTM Settings
+  community.general.osx_defaults:
+    <<: *common
+    domain: com.utmapp.UTM
+  with_dict: "{{ Settings.UTM }}"

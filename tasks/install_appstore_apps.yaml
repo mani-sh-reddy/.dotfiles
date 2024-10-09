@@ -1,0 +1,9 @@
+---
+- name: Install macOS App Store Apps
+  community.general.mas:
+    id: "{{ item }}"
+    state: present
+    upgrade_all: true
+  loop: "{{ Apps.MacAppStore }}"
+  loop_control:
+    label: "{{ item }}"

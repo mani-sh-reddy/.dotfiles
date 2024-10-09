@@ -1,0 +1,30 @@
+---
+- name: Get homebrew cache path.
+  command: brew --cache
+  register: homebrew_cache_path
+
+- name: Clear homebrew cache.
+  file:
+    path: "{{ homebrew_cache_path.stdout | trim }}"
+    state: absent
+
+- name: Setup Brew Taps
+  community.general.homebrew_tap:
+    name: "{{ item }}"
+  loop: "{{ Apps.Homebrew.Taps }}"
+  loop_control:
+    label: "{{ item }}"
+
+- name: Install Brew Formulas
+  community.general.homebrew:
+    name: "{{ item }}"
+  loop: "{{ Apps.Homebrew.Formulas }}"
+  loop_control:
+    label: "{{ item }}"
+
+- name: Install Brew Casks
+  community.general.homebrew_cask:
+    name: "{{ item }}"
+  loop: "{{ Apps.Homebrew.Casks }}"
+  loop_control:
+    label: "{{ item }}"

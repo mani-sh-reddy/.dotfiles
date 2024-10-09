@@ -1,0 +1,9 @@
+---
+- name: Remove Siri Analytics
+  ansible.builtin.script: ../scripts/rm-siri-analytics.sh
+  register: rm_siri_analytics
+  become: true
+
+- name: "[Output] Remove Siri Analytics"
+  ansible.builtin.debug:
+    var: rm_siri_analytics

@@ -1,0 +1,66 @@
+# Generated using Ansible Playbook (mani-sh-reddy/.dotfiles)
+
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
+
+export ZSH="$HOME/.oh-my-zsh"
+COMPLETION_WAITING_DOTS="true"
+
+# ANTIDOTE
+zstyle ':antidote:bundle' use-friendly-names 'yes'
+source $(brew --prefix)/opt/antidote/share/antidote/antidote.zsh
+antidote load
+
+export HOMEBREW_NO_INSECURE_REDIRECT=1
+export HOMEBREW_CASK_OPTS=--require-sha
+export HOMEBREW_NO_ANALYTICS=1
+
+fpath+=("$(brew --prefix)/share/zsh/site-functions")
+PATH="/opt/homebrew/bin:$PATH"
+source <(fzf --zsh)
+
+source $ZSH/oh-my-zsh.sh
+
+autoload -U compinit; compinit
+
+source "$FZF_TAB_HOME/fzf-tab.plugin.zsh"
+
+alias src='source ~/.zshrc'
+alias cat='bat'
+alias ls='eza -laF --icons=always --group-directories-first --show-symlinks'
+alias zshconfig="code ~/.zshrc"
+alias sshconfig="code ~/.ssh/config"
+alias k='kubectl'
+alias k9s-all='k9s --all-namespaces --command po'
+alias kubectl=kubecolor
+alias yt-dlp="bash $HOME/Documents/scripts/yt-dlp.sh"
+
+source <(kubectl completion zsh)
+compdef kubecolor=kubectl
+
+delete-tm-snapshots() {
+  for d in $(tmutil listlocalsnapshotdates | grep "-"); do sudo tmutil deletelocalsnapshots $d; done
+}
+
+svg-to-png() {
+  output_file=$(basename $1 .svg)
+  rsvg-convert -h 1024 $1 > "$output_file.png"
+}
+
+export PATH="/opt/homebrew/opt/openjdk@17/bin:$PATH"
+export JAVA_HOME=/opt/homebrew/opt/openjdk@17
+
+export EDITOR="code --wait"
+export GPG_TTY=$(tty)
+export HOMEBREW_NO_ANALYTICS=1
+export AWS_PAGER=""
+export DFT_COLOR="always"
+export DFT_TAB_WIDTH="2"
+export DFT_BYTE_LIMIT=100000000
+export DFT_DISPLAY="side-by-side-show-both"
+export DFT_SKIP_UNCHANGED=true
+export DFT_SORT_PATHS=true
+
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

@@ -1,0 +1,31 @@
+---
+- name: Checking if homebrew is installed.
+  stat:
+    path: /opt/homebrew/bin/brew
+  register: homebrew_check
+
+- name: Install Homebrew
+  fail:
+    msg: Homebrew is missing, install from http://brew.sh
+  when:
+    - not homebrew_check.stat.exists
+    - not install_homebrew_if_missing
+
+- name: Installing Homebrew.
+  shell: /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  when:
+    - not homebrew_check.stat.exists
+    - install_homebrew_if_missing
+
+- name: Get homebrew cache path.
+  command: brew --cache
+  register: homebrew_cache_path
+  when:
+    - homebrew_check.stat.exists
+
+- name: Clear homebrew cache.
+  file:
+    path: "{{ homebrew_cache_path.stdout | trim }}"
+    state: absent
+  when:
+    - homebrew_check.stat.exists

@@ -1,0 +1,18 @@
+---
+- name: Setup Local macOS
+  hosts: local
+  become: true
+  become_user: mani
+  vars_files:
+    - vars.yaml
+    - ansible-vault/ansible-vault.yaml
+
+  tasks:
+    - name: Use Task Files
+      include_tasks: "{{ task_file }}"
+      loop: "{{ task_files | map('regex_replace', '^', 'tasks/') | map('regex_replace', '$', '.yaml') | list }}"
+      loop_control:
+        loop_var: task_file
+
+  vars:
+    task_files:

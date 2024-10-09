@@ -1,0 +1,4 @@
+[submodule "ansible-vault"]
+	path = ansible-vault
+	url = https://github.com/mani-sh-reddy/.dotfiles-vault.git
+	branch = main

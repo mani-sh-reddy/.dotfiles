@@ -1,0 +1,491 @@
+---
+macOSTerminalThemeName: "solarised-dark-theme"
+
+Repos:
+  GitHub:
+    - mani-sh-reddy/.dotfiles-vault
+    - mani-sh-reddy/apollo-docker
+    - mani-sh-reddy/apollo-jenkins-seeds
+    - mani-sh-reddy/apollo-synology
+    - mani-sh-reddy/configs.code-workspace
+    - mani-sh-reddy/homebrew-repo
+    - mani-sh-reddy/manishreddy.uk
+    - mani-sh-reddy/net.conf
+    - mani-sh-reddy/tailnet-configs
+    - mani-sh-reddy/whatthecommit-prepare-commit-msg
+
+Apps:
+  Homebrew:
+    Taps:
+      - mani-sh-reddy/repo
+    Formulas:
+      - ansible
+      - antidote
+      - atomicparsley
+      - bat
+      - docker
+      - dockutil
+      - exiftool
+      - eza
+      - ffmpeg
+      - fzf
+      - gh
+      - git
+      - gnu-sed
+      - gnupg
+      - gnutls
+      - helm
+      - ijq
+      - jq
+      - k9s
+      - kubecolor
+      - kubernetes-cli
+      - kustomize
+      - mas
+      - nmap
+      - python@3
+      - ripgrep
+      - tree
+      - wakeonlan
+      - yq
+      - yt-dlp
+    Casks:
+      - aldente
+      - appcleaner
+      - firefox
+      - font-blex-mono-nerd-font
+      - gpg-suite
+      - grandperspective
+      - iina
+      - keka
+      - lulu
+      - orbstack
+      - tailscale
+      - utm
+      - visual-studio-code
+      - xld
+  MacAppStore:
+    - 1320666476 # Wipr
+    - 1440147259 # AdGuard
+    - 1544743900 # Hush Nag Blocker
+    - 1549370672 # Save to Raindrop.io
+    - 1559269364 # Notion Web Clipper
+    - 985555908 # Remind Me Faster
+    - 1352778147 # Bitwarden
+    - 409201541 # Pages
+    - 409203825 # Numbers
+    - 899247664 # TestFlight
+
+MacOSDockItems:
+  Apps:
+    - name: Launchpad
+      path: "/System/Applications/Launchpad.app"
+      pos: 1
+    - name: Mail
+      path: "/System/Applications/Mail.app"
+      pos: 2
+    - name: Safari
+      path: "/Applications/Safari.app"
+      pos: 3
+    - name: YouTube
+      path: "/Users/mani/Applications/YouTube.app"
+      pos: 4
+    - name: Messages
+      path: "/System/Applications/Messages.app"
+      pos: 5
+    - name: Discord
+      path: "/Users/mani/Applications/Discord.app"
+      pos: 6
+    - name: WhatsApp
+      path: "/Users/mani/Applications/WhatsApp.app"
+      pos: 7
+    - name: Calendar
+      path: "/System/Applications/Calendar.app"
+      pos: 8
+    - name: Reminders
+      path: "/System/Applications/Reminders.app"
+      pos: 9
+    - name: "Remind Faster"
+      path: "/Applications/Remind Faster.app"
+      pos: 10
+    - name: Notes
+      path: "/System/Applications/Notes.app"
+      pos: 11
+    - name: Notion
+      path: "/Users/mani/Applications/Notion.app"
+      pos: 12
+    - name: "App Store"
+      path: "/System/Applications/App Store.app"
+      pos: 13
+    - name: "System Settings"
+      path: "/System/Applications/System Settings.app"
+      pos: 14
+    - name: Terminal
+      path: "/System/Applications/Utilities/Terminal.app"
+      pos: 15
+    - name: "Visual Studio Code"
+      path: "/Applications/Visual Studio Code.app"
+      pos: 16
+    - name: Screenshot
+      path: "/System/Applications/Utilities/Screenshot.app"
+      pos: 17
+    - name: "iPhone Mirroring"
+      path: "/System/Applications/iPhone Mirroring.app"
+      pos: 18
+  Folders:
+    - name: "Downloads"
+      path: "~/Downloads"
+      pos: 1
+
+Settings:
+  macOS:
+    SetupVar:
+      NSAutomaticDashSubstitutionEnabled: 0
+    GlobalDomain:
+      NSAutomaticDashSubstitutionEnabled: 0
+      NSNavPanelExpandedStateForSaveMode: true
+      PMPrintingExpandedStateForPrint: true
+      NSDocumentSaveNewDocumentsToCloud: false
+      NSAutomaticSpellingCorrectionEnabled: false
+      AppleShowAllExtensions: true
+    AppleGlobalDomain:
+      AppleActionOnDoubleClick: None
+      AppleAntiAliasingThreshold: 4
+      AppleICUForce24HourTime: 1
+      AppleInterfaceStyleSwitchesAutomatically: 1
+      AppleMiniaturizeOnDoubleClick: 0
+      AppleTemperatureUnit: Celsius
+      InitialKeyRepeat: 15.0
+      KeyRepeat: 2.0
+      NSAutomaticCapitalizationEnabled: 0
+      NSAutomaticDashSubstitutionEnabled: 0
+      NSAutomaticPeriodSubstitutionEnabled: 0
+      NSAutomaticQuoteSubstitutionEnabled: 0
+      NSAutomaticSpellingCorrectionEnabled: 0
+    LaunchServices:
+      LSQuarantine: false
+    AppleMultitouchTrackpad:
+      ActuateDetents: 1
+      Clicking: 1
+      DragLock: 0
+      Dragging: 0
+      FirstClickThreshold: 0
+      ForceSuppressed: 0
+      SecondClickThreshold: 0
+      TrackpadCornerSecondaryClick: 0
+      TrackpadFiveFingerPinchGesture: 2
+      TrackpadFourFingerHorizSwipeGesture: 2
+      TrackpadFourFingerPinchGesture: 2
+      TrackpadFourFingerVertSwipeGesture: 2
+      TrackpadHandResting: 1
+      TrackpadHorizScroll: 1
+      TrackpadMomentumScroll: 1
+      TrackpadPinch: 1
+      TrackpadRightClick: 1
+      TrackpadRotate: 1
+      TrackpadScroll: 1
+      TrackpadThreeFingerDrag: 1
+      TrackpadThreeFingerHorizSwipeGesture: 0
+      TrackpadThreeFingerTapGesture: 0
+      TrackpadThreeFingerVertSwipeGesture: 0
+      TrackpadTwoFingerDoubleTapGesture: 1
+      TrackpadTwoFingerFromRightEdgeSwipeGesture: 3
+    Accessibility:
+      KeyRepeatDelay: 0.5
+      KeyRepeatEnabled: 1
+      KeyRepeatInterval: 0.083333333
+    FaceTime:
+      FaceTimeIsAlwaysOnTop: 1
+    Safari:
+      AlwaysRestoreSessionAtLaunch: "1"
+      AutoFillFromAddressBook: "0"
+      AutoOpenSafeDownloads: "0"
+      DownloadsClearingPolicy: "0"
+      EnableEnhancedPrivacyInRegularBrowsing: "1"
+      ExcludePrivateWindowWhenRestoringSessionAtLaunch: "0"
+      ExtensionsEnabled: "1"
+      HideHighlightsEmptyItemViewPreferenceKey: "1"
+      HideStartPageFrecentsEmptyItemView: "1"
+      HistoryAgeInDaysLimit: 365000
+      HomePage: "about:blank"
+      IncludeDevelopMenu: true
+      NewTabBehavior: 4
+      NewTabPageSetByUserGesture: true
+      NewWindowBehavior: 4
+      OpenPrivateWindowWhenNotRestoringSessionAtLaunch: false
+      SearchProviderShortName: "DuckDuckGo"
+      ShowBackgroundImageInFavorites: false
+      ShowCloudTabsInFavorites: false
+      ShowFrequentlyVisitedSites: false
+      ShowFullURLInSmartSearchField: true
+      ShowHighlightsInFavorites: false
+      ShowOverlayStatusBar: true
+      ShowPrivacyReportInFavorites: false
+      ShowReadingListInFavorites: false
+      ShowRecentlyClosedTabsPreferenceKey: false
+      ShowServiceNamesInPasswords: true
+      ShowSidebarInNewWindows: false
+      ShowSidebarInTopSites: false
+      ShowSiriSuggestionsPreference: false
+      ShowStandaloneTabBar: false
+      ShowTabGroupFavoritesPreferenceKey: false
+      SidebarSplitViewDividerPosition: 240.0
+      SidebarViewModeIdentifier: 0
+    TextEdit:
+      NSFixedPitchFont: IBMPlexMono
+      NSFixedPitchFontSize: "13"
+      NSFontPanelAttributes: "1, 4"
+      RichText: 0
+    WindowManager:
+      AppWindowGroupingBehavior: 1
+      AutoHide: 0
+      EnableStandardClickToShowDesktop: 0
+      HideDesktop: 1
+      StageManagerHideWidgets: 0
+      StandardHideWidgets: 0
+    DesktopServices:
+      DSDontWriteNetworkStores: true
+    Dock:
+      expose-group-apps: 1
+      largesize: 35.0
+      magnification: 1
+      mru-spaces: 0
+      orientation: left
+      position-immutable: 1
+      showAppExposeGestureEnabled: 1
+      showLaunchpadGestureEnabled: 0
+      size-immutable: 1
+      tilesize: 27.0
+    Finder:
+      AppleShowAllFiles: 1
+      DownloadsFolderListViewSettingsVersion: 1
+      FXArrangeGroupViewBy: Name
+      RecentsArrangeGroupViewBy: "Date Last Opened"
+      ShowExternalHardDrivesOnDesktop: 1
+      ShowHardDrivesOnDesktop: 0
+      ShowMountedServersOnDesktop: 1
+      ShowPathbar: 1
+      ShowRemovableMediaOnDesktop: 1
+      ShowSidebar: 1
+      ShowStatusBar: 0
+      SidebarDevicesSectionDisclosedState: 1
+      SidebarMediaBrowserSectionDisclosedState: 0
+      SidebarPlacesSectionDisclosedState: 1
+      SidebarShowingSignedIntoiCloud: 1
+      SidebarShowingiCloudDesktop: 0
+      SidebarTagsSctionDisclosedState: 1
+      SidebarWidth: 163.0
+    Books:
+      AllowAutoDownloadsForPurchasesFromOtherDevices: 0
+      BCSyncCloudKit: 1
+      BCSyncICloudDrive: 1
+      BCSyncPreferencesItunesSignedOut: 0
+      BCSyncSettingsDisabled: 0
+      BKAutoHyphenation: 0
+      BKIncludeBookStoreResultsInSearch: 1
+      BKStyleManagerLastFont: "Canela Text"
+      BookEPUB_CurrentThemePersistence_themeIdentifier: calm
+    Calendar:
+      AllDayAreaHeight: 44.0
+      BirthdayEventsGenerationAttemptsToResetKey: 0
+      CALPrefLastTruthFileMigrationVersion: 1
+      CalendarListMiniMonthVisibleMonths: 1
+      CalendarSidebarShown: 1
+      CalendarSidebarView: 0
+      ShowDeclinedEvents: 0
+    Mail:
+      DeleteAttachmentsEnabled: 0
+      FavoriteMailboxDraftsAutomaticallyAdded: 1
+      FavoriteMailboxFlaggedAutomaticallyAdded: 1
+      FavoriteMailboxInboxAutomaticallyAdded: 1
+      FavoriteMailboxSentAutomaticallyAdded: 1
+      FlagColorToDisplay: 1
+      IndexJunk: 1
+      IndexTrash: 1
+      MailDockBadge: "2"
+      MailShowFlags: 1
+      NewMessagesSoundName: Tink
+      SendFormat: Plain
+      ShouldShowUnreadMessagesInBold: 0
+      ShowBccHeader: 0
+      ShowCcHeader: 1
+      ShowPriorityControl: 0
+      ShowReplyToHeader: 0
+      SpellCheckingBehavior: InlineSpellCheckingEnabled
+    Clock:
+      ShowAMPM: 1
+      ShowDate: 0
+      ShowDayOfWeek: 1
+    OneTimePasscodes:
+      DeleteVerificationCodes: 0
+    ScreenCapture:
+      disable-shadow: 1
+      location: "~/Downloads"
+      style: window
+      target: file
+      video: 0
+
+  Aldente:
+    SUAutomaticallyUpdate: 0
+    SUEnableAutomaticChecks: 0
+    SUSendProfileInfo: 0
+    automaticDischarge: 0
+    chargeVal: 50.0
+    completelyDisableSleep: 0
+    exitInhibitCharge: 0
+    heatProtectMode: 0
+    lockScreenWhenClosed: 0
+    lowChargeLimitWarning: 1
+    lpmPreference: 0
+    menuBarIconStyle: 0
+    noMenubarIcon: 0
+    popoverAnimation: 0
+    sailingMode: 0
+    showDockIcon: 0
+    showGUIonStartup: 0
+    showHelperInstallationMessage: 1
+    showPercentage: 0
+    sleepInhibitCharge: 0
+
+  IINA:
+    SUAutomaticallyUpdate: 0
+    arrowBtnAction: 2
+    musicModeShowAlbumArt: 1
+    oscPosition: 2
+    pinchAction: 2
+    subAutoLoadIINA: 0
+    verticalScrollAction: 2
+
+  Keka:
+    7zzComposeOnCompression: 1
+    7zzDecomposeOnExtraction: 1
+    AlwaysAskCompressionPassword: 0
+    AppearanceCustomDockTile: 1
+    AppearanceDifferentiateTasksCountInDock: 0
+    AppearanceShowDockIcon: 0
+    AppearanceSquishFaceInDock: 1
+    ApplyQuarantineAfterExtraction: 1
+    ArchiveSingle: 0
+    AskZipUsingAES: 1
+    BackgroundQoSOnBattery: 0
+    CalculateMD5: 0
+    CloseController: 1
+    CreateSFX: 0
+    CustomNameMultipleFiles: ""
+    CustomNameSingleFile: ""
+    DMGFormat: 0
+    DefaultActionToPerform: 0
+    DefaultAppDialog: 0
+    DefaultExtractLocationController: 2
+    DefaultExtractLocationSet: ""
+    DefaultFormat: ZIP
+    DefaultMethod: 3
+    DefaultNameController: 1
+    DefaultSaveLocationController: 2
+    DefaultSaveLocationSet: ""
+    DefaultSoundCompression: 1
+    DefaultSoundExtraction: 2
+    DeleteAfterCompression: 0
+    DeleteAfterExtraction: 0
+    DevLog: 0
+    DevLogAll: 0
+    DevLogNotifications: 0
+    DevLogReader: 0
+    DevSaveLog: 0
+    Encryption: 1
+    ExcludeMacForks: 1
+    ExportPassword: 0
+    ExtractOnIntermediateFolder: 0
+    ExtractionExcludeMacForks: 0
+    ExtractionFolderRenameExtension: 1
+    FallbackCustomPath: "$HOME/Downloads"
+    FallbackOption: 1
+    FinderAfterCompression: 1
+    FinderAfterExtraction: 1
+    ForceHFSDMG: 1
+    ForceTarballOnCompressionOnly: 1
+    GrowlBlocksExit: 1
+    IgnoreGZIPName: 0
+    KeepExtension: 0
+    KekaAskBeforeCancel: 1
+    QoS: 33
+    QueueCompression: 1
+    QueueCompressionLimit: 1
+    QueueExtraction: 1
+    QueueExtractionLimit: 2
+    QueueGlobal: 1
+    QueueGlobalLimit: 2
+    RemoveBadPasswordExtraction: 1
+    RemoveIncompleteExtraction: 0
+    RemoveKekaQuarantineIfPossible: 1
+    RetryPassword: 1
+    ReusePassword: 1
+    SUAutomaticallyUpdate: 1
+    SUEnableAutomaticChecks: 1
+    SelectedMethod: 5
+    SelectedTab: 7Z
+    SelectedTabDefaults: 1000
+    SetAsDefaultApp: 1
+    SetModificationDateAfterExtraction: 0
+    ShowCompressionPassword: 0
+    ShowExtractionPassword: 0
+    SkipQuarantineSlowdownDetection: 0
+    SolidArchive: 1
+    TarballSupport: 1
+    UnifiedToolbar: 1
+    UnrarWithP7ZIP: 0
+    UnzipWithUNAR: 1
+    Use7zz: 1
+    UseCustomNameWithMultipleFiles: 1
+    UseDefaultPasswordOnAdvancedWindow: 0
+    UseDefaultPasswordOnCompressions: 0
+    UseDefaultPasswordOnExtractions: 0
+    UseGrowl: 1
+    UseHapticFeedback: 1
+    UseISO9660: 0
+    UseLongTarballExtension: 1
+    UseParentName: 0
+    VerifyCompression: 1
+    ZipUsingAES: 0
+
+  Raycast:
+    NSStatusItem Visible raycastIcon: 0
+    pageNavigationCommandKeysIdentifierKey: arrows
+    raycastGlobalHotkey: "Command-49"
+    raycastPreferredWindowMode: default
+    raycastShouldFollowSystemAppearance: 1
+
+  RemindFaster:
+    currentListIndex: 0
+    darkThemePreference: dark
+    firstPresetTimeHour: 9
+    firstPresetTimeMinutes: 0
+    listTitle: Reminders
+    secondPresetTimeHour: 12
+    secondPresetTimeMinutes: 0
+    thirdPresetTimeHour: 18
+    thirdPresetTimeMinutes: 0
+    useSystemTheme: 1
+    userSelectedAppTheme: automatic
+
+  Transmission:
+    AutoSize: 1
+    CheckUpload: 1
+    DownloadLocationConstant: 1
+    IdleLimitCheck: 1
+    IdleLimitMinutes: 1
+    InfoVisible: 0
+    QueueDownloadNumber: 3
+    QueueSeedNumber: 3
+    RatioCheck: 1
+    RatioLimit: 0.0
+    UploadLimit: 0
+    WarningDonate: 0
+    WarningLegal: 0
+
+  UTM:
+    FullScreenAutoCapture: 1
+    NoUsbPrompt: 0
+    PreventIdleSleep: 0
+    ServerPort: 0
+    ShowMenuIcon: 0
